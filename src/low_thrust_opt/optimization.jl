@@ -2,7 +2,7 @@ function solve_with(vars, p; alg=DEFAULT_ALG, kwargs...)
 	@unpack λ, t = vars
 	u0 = ComponentArray([p.chaser; p.target; λ], getaxes(p.prob.u0))
 	prob = remake(p.prob; u0, tspan=(zero(t), t), p)
-	return solve(prob, alg; DEFUALT_SIM_ARGS..., kwargs...)
+	return solve(prob, alg; DEFAULT_SIM_ARGS..., kwargs...)
 end
 
 function loss(vars, p)
