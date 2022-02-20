@@ -1,7 +1,7 @@
 # GTOC11Utils
 ## Installation
 ```julia
-(@v1.6)> add https://github.com/jonniedie/GTOC11Utils
+(@v1.6)> add https://github.com/buaa1205/GTOC11Utils
 ```
 
 ## Use
