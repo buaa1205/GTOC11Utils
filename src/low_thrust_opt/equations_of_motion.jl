@@ -60,9 +60,9 @@ function opt_rel_spacecraft!(D, vars, p, t)
 	n = μ/R^3
 	m = 3μ/R^5
 	
-	D.λ.r.x = n*λ.ṙ.x + m*r.x*(-λ.ṙ.x + λ.ṙ.y + λ.ṙ.z)
-	D.λ.r.y = n*λ.ṙ.y + m*r.y*( λ.ṙ.x - λ.ṙ.y + λ.ṙ.z)
-	D.λ.r.z = n*λ.ṙ.z + m*r.z*( λ.ṙ.x + λ.ṙ.y - λ.ṙ.z)
+	D.λ.r.x = n*λ.ṙ.x + 3*m*r.x*(-λ.ṙ.x*r.x - λ.ṙ.y*r.y - λ.ṙ.z*r.z)
+	D.λ.r.y = n*λ.ṙ.y + 3*m*r.y*(-λ.ṙ.x*r.x - λ.ṙ.y*r.y - λ.ṙ.z*r.z)
+	D.λ.r.z = n*λ.ṙ.z + 3*m*r.z*(-λ.ṙ.x*r.x - λ.ṙ.y*r.y - λ.ṙ.z*r.z)
 	D.λ.ṙ .= -λ.r
 	
 	return D
